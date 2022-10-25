@@ -4,9 +4,42 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="C:\Users\PC\Desktop\love calculator\style.css">
+        <title>Love Calculator</title>
     </head>
     <body>
-    
+    <div class="container">
+        <div class="content">
+            <h1>Love Calculator</h1>
+            <div class="imputarea">
+                <input type="text" placeholder="Your Name" id="NameOne" onfocus="this.value = ' ' ">
+                <input type="text" placeholder="Your Lover" id="NameTwo" onfocus="this.value = ' ' ">
+            </div>
+                <a href="a" onclick="love()">Calculate</a>
+                <p id="print">Your relationship result here</p>
+                <p id="statement"></p>
+        </div>
+    </div>
+    <script>
+        function love(){
+            var name1 = document.getElementById("NameOne").value;
+            var name2 = document.getElementById("NameTwo").value;
+            if(name1.length<=2){
+                alert("Enter at least 3 characters");
+            }
+            if(name2.length<=2){
+                alert("Enter at least 3 characters");
+            }
+            else{
+                var random = Math.floor(Math.random()*100); //fixed wrong typo//
+                document.getElementById("print").innerHTML = name1 + "and" + name2 + "=" + random + "%" + "of love";
+            }
+            if(random<=10 || random<=50){
+                document.getElementById("statement").innerHTML ="Good relationship";
+            }
+            else if (random<=51 || random<100){
+                document.getElementByID("statement").innerHTML = "Lovely relationship";
+            }
+    </script>
     </body>
 </html>
